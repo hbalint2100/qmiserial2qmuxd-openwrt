@@ -23,7 +23,7 @@ endef
 define Build/Prepare
 	git submodule init
 	git submodule update
-	patch ./src/qmiserial2qmuxd.c ./patches/qmiserial2qmuxd.patch
+	patch ./src/qmiserial2qmuxd.c ./patches/0001-Changed-header-inclusion-from-termio.h-to-termios.h.patch
 	mkdir -p $(PKG_BUILD_DIR)
 	$(CP) ./src/* $(PKG_BUILD_DIR)
 endef
