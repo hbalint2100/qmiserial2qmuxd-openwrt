@@ -23,7 +23,11 @@ endef
 define Build/Prepare
 	git submodule init
 	git submodule update
-	patch -p1 < ./patches/Changed-termio.h-to-termios.h.patch
+	if git apply --check ./patches/Changed-termio.h-to-termios.h.patch; then \
+		git apply ./patches/Changed-termio.h-to-termios.h.patch; \
+	else \
+		echo "Patch has already been applied or conflicts exist."; \
+	fi
 	mkdir -p $(PKG_BUILD_DIR)
 	$(CP) ./src/* $(PKG_BUILD_DIR)
 endef
