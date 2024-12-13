@@ -24,7 +24,7 @@ define Build/Prepare
 	git submodule init
 	git submodule update
 	cd ./src
-	git apply ../patches/0001-Changed-header-inclusion-from-termio.h-to-termios.h.patch
+	git apply ./patches/0001-Changed-header-inclusion-from-termio.h-to-termios.h.patch
 	cd ..
 	mkdir -p $(PKG_BUILD_DIR)
 	$(CP) ./src/* $(PKG_BUILD_DIR)
