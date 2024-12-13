@@ -21,6 +21,8 @@ define Package/$(PKG_NAME)/description
 endef
 
 define Build/Prepare
+	git submodule init
+	git submodule update
 	mkdir -p $(PKG_BUILD_DIR)
 	$(CP) ./src/* $(PKG_BUILD_DIR)
 endef
