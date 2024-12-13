@@ -1,0 +1,25 @@
+From 9bebfc4c3bdc78f990912559f53d068f13972a7a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?B=C3=A1lint=20Husz=C3=A1r?= <hbalint2100@yahoo.com>
+Date: Fri, 13 Dec 2024 23:46:07 +0100
+Subject: [PATCH] Changed header inclusion from termio.h to termios.h
+
+---
+ qmiserial2qmuxd.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/qmiserial2qmuxd.c b/qmiserial2qmuxd.c
+index c05ce4f..1b6d734 100644
+--- a/qmiserial2qmuxd.c
++++ b/qmiserial2qmuxd.c
+@@ -36,7 +36,7 @@
+ #include <inttypes.h>
+ #include <sys/ioctl.h>
+ #include <sys/uio.h>
+-#include <termio.h>
++#include <termios.h>
+ 
+ #ifndef __packed
+ #define __packed  __attribute__ ((__packed__))
+-- 
+2.39.2
+

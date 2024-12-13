@@ -23,6 +23,7 @@ endef
 define Build/Prepare
 	git submodule init
 	git submodule update
+	patch ./src/qmiserial2qmuxd.c ./patches/qmiserial2qmuxd.patch
 	mkdir -p $(PKG_BUILD_DIR)
 	$(CP) ./src/* $(PKG_BUILD_DIR)
 endef
