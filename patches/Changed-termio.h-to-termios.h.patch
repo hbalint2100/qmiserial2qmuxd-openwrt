@@ -1,0 +1,14 @@
+Submodule src contains modified content
+diff --git a/src/qmiserial2qmuxd.c b/src/qmiserial2qmuxd.c
+index c05ce4f..1b6d734 100644
+--- a/src/qmiserial2qmuxd.c
++++ b/src/qmiserial2qmuxd.c
+@@ -36,7 +36,7 @@
+ #include <inttypes.h>
+ #include <sys/ioctl.h>
+ #include <sys/uio.h>
+-#include <termio.h>
++#include <termios.h>
+ 
+ #ifndef __packed
+ #define __packed  __attribute__ ((__packed__))
