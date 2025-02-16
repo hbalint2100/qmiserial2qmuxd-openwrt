@@ -1,0 +1,10 @@
+menu "Configuration"
+        depends on PACKAGE_qmiserial2qmuxd
+
+config QMI_SERIAL_2_QMUXD_CUSTOM_SOCKET
+        bool "Enable custom socket"
+		default n
+
+config QMI_SERIAL_2_QMUXD_CUSTOM_SOCKET_NAME
+        string "Custom socket name"
+		default qmi-proxy

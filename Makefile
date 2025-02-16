@@ -14,6 +14,11 @@ define Package/$(PKG_NAME)
   CATEGORY:=Utilities
   TITLE:=Utility program that accepts QMI over serial port and forwards it to QMUXD
   DEPENDS:=+libqmi +qmi-utils
+  MENU:=1
+endef
+
+define Package/$(PKG_NAME)/config
+	source "$(SOURCE)/Config.in"
 endef
 
 define Package/$(PKG_NAME)/description
