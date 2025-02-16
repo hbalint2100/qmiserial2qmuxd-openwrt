@@ -7,4 +7,6 @@ config QMI_SERIAL_2_QMUXD_CUSTOM_SOCKET
 
 config QMI_SERIAL_2_QMUXD_CUSTOM_SOCKET_NAME
         string "Custom socket name"
+        depends on QMI_SERIAL_2_QMUXD_CUSTOM_SOCKET
 		default qmi-proxy
+endmenu
