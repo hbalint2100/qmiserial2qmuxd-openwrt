@@ -33,11 +33,11 @@ define Build/Prepare
 	else \
 		echo "Patch has already been applied or conflicts exist."; \
 	fi
-ifeq ($(CONFIG_QMI_SERIAL_2_QMUXD_CUSTOM_SOCKET),y)
-	sed -i 's|#define SOCKPATH ".*"|#define SOCKPATH $(CONFIG_QMI_SERIAL_2_QMUXD_CUSTOM_SOCKET_NAME)|' ./src/qmiserial2qmuxd.c
-endif
 	mkdir -p $(PKG_BUILD_DIR)
 	$(CP) ./src/* $(PKG_BUILD_DIR)
+ifeq ($(CONFIG_QMI_SERIAL_2_QMUXD_CUSTOM_SOCKET),y)
+	sed -i 's|#define SOCKPATH ".*"|#define SOCKPATH $(CONFIG_QMI_SERIAL_2_QMUXD_CUSTOM_SOCKET_NAME)|' $(PKG_BUILD_DIR)/qmiserial2qmuxd.c
+endif
 endef
 
 define Build/Compile
